@@ -7,7 +7,7 @@ use App\Models\MataKuliah;
 use App\Http\Resources\MatakuliahResource;
 use Illuminate\Support\Facades\Validator;
 
-class MatakuliahController extends Controller
+class MataKuliahController extends Controller
 {
     public function index()
     {
