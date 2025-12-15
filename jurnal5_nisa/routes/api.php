@@ -13,10 +13,12 @@ Route::get('/login', function (Request $request) {
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+// Public routes - No authentication required (for easy testing)
+Route::apiResource('mahasiswa', MahasiswaController::class);
+Route::apiResource('matakuliah', MataKuliahController::class);
+
 // Protected routes with Sanctum authentication
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
-    Route::apiResource('mahasiswa', MahasiswaController::class);
-    Route::apiResource('matakuliah', MataKuliahController::class);
 });
 
